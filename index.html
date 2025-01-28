@@ -11,36 +11,15 @@
       padding: 0;
       background-color: #f9f9f9;
       color: #333;
-      padding-top: 120px; /* Espacio para el header fijo */
     }
-
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Distribuye el contenido correctamente */
       background-color: #2a2d34;
       color: rgb(255, 255, 255);
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      transition: all 0.3s ease; /* Transición suave */
-    }
-
-    header.small {
-      padding: 10px 20px; /* Header más pequeño */
-    }
-
-    header.small img {
-      width: 100px; /* Logo más pequeño */
-      height: 60px;
-    }
-
-    header.small h1 {
-      font-size: 1.2rem; /* Título más pequeño */
+      padding: 10px 20px;
+      text-align: left;
+      position: relative; /* Para posicionar el menú desplegable */
     }
 
     header a {
@@ -55,31 +34,30 @@
       height: 85px;
       margin-right: 10px;
       border-radius: 0%;
-      transition: all 0.3s ease; /* Transición suave */
     }
 
     header h1 {
       margin: 0;
       font-size: 1.5rem;
-      transition: all 0.3s ease; /* Transición suave */
     }
 
+    /* Estilos para el menú desplegable */
     .menu-icon {
       cursor: pointer;
       font-size: 24px;
-      margin-left: 20px; /* Espaciado consistente desde el contenido anterior */
+      margin-left: auto; /* Mueve el ícono a la derecha */
     }
 
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 100%;
-      right: 40px; /* Ajusta este valor para mover el menú más a la izquierda */
+      top: 100%; /* Posiciona el menú debajo del header */
+      right: 0;
       background-color: #2a2d34;
       border: 1px solid #444;
       border-radius: 5px;
       padding: 10px;
-      z-index: 1001; /* Asegura que esté por encima del header */
+      z-index: 1000;
     }
 
     .dropdown-menu a {
@@ -87,7 +65,7 @@
       color: white;
       padding: 10px;
       text-decoration: none;
-      text-align: right;
+      text-align: left;
     }
 
     .dropdown-menu a:hover {
@@ -178,14 +156,16 @@
 <body>
 
   <!-- Encabezado -->
-  <header id="mainHeader">
+  <header>
     <a href="index.html">
       <img src="img/logo.png" alt="Logo de la Página">
-      <h1>CATALOGO</h1>
+      <h1></h1>
     </a>
+    <h1>CATALOGO GRAFICOS WEY</h1>
+    <!-- Ícono de menú -->
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <!-- Menú desplegable -->
     <div class="dropdown-menu" id="dropdownMenu">
-      <a href="index.html">Inicio</a>
       <a href="combos.html">Combos</a>
       <a href="contacto.html">Contacto</a>
       <a href="quienes-somos.html">Quiénes Somos</a>
@@ -252,16 +232,18 @@
   </footer>
 
   <script>
-    // JavaScript para el header reducido al hacer scroll
-    const header = document.getElementById('mainHeader');
+    // JavaScript para controlar el slideshow
+    const slides = document.querySelectorAll('.slideshow-container img');
+    let currentSlide = 0;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('small');
-      } else {
-        header.classList.remove('small');
-      }
-    });
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    // Cambia de imagen cada 3 segundos
+    setInterval(showNextSlide, 3000);
 
     // JavaScript para el menú desplegable
     function toggleMenu() {
@@ -282,19 +264,6 @@
         }
       }
     };
-
-    // JavaScript para controlar el slideshow
-    const slides = document.querySelectorAll('.slideshow-container img');
-    let currentSlide = 0;
-
-    function showNextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-
-    // Cambia de imagen cada 3 segundos
-    setInterval(showNextSlide, 3000);
   </script>
 </body>
 </html>
