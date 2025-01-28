@@ -6,7 +6,7 @@
   <title>Catálogo de Artículos Personalizados</title>
   <style>
     body {
-      font-family: 'Helvetica', Arial, sans-serif; /* Cambio de fuente */
+      font-family: 'Helvetica', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
@@ -19,6 +19,7 @@
       color: rgb(255, 255, 255);
       padding: 10px 20px;
       text-align: left;
+      position: relative; /* Para posicionar el menú desplegable */
     }
 
     header a {
@@ -32,12 +33,43 @@
       width: 140px;
       height: 85px;
       margin-right: 10px;
-      border-radius: 0%; /* Opcional, redondea el logo */
+      border-radius: 0%;
     }
 
     header h1 {
       margin: 0;
       font-size: 1.5rem;
+    }
+
+    /* Estilos para el menú desplegable */
+    .menu-icon {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: auto; /* Mueve el ícono a la derecha */
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%; /* Posiciona el menú debajo del header */
+      right: 0;
+      background-color: #2a2d34;
+      border: 1px solid #444;
+      border-radius: 5px;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #444;
     }
 
     .productos {
@@ -95,7 +127,6 @@
       font-weight: bold;
     }
 
-    /* Estilos del botón COMPRAR */
     .producto .comprar-btn {
       background-color: #d71f16;
       color: white;
@@ -110,7 +141,7 @@
     }
 
     .producto .comprar-btn:hover {
-      background-color: #b31810; /* Color más oscuro al pasar el mouse */
+      background-color: #b31810;
     }
 
     footer {
@@ -131,7 +162,14 @@
       <h1></h1>
     </a>
     <h1>CATALOGO GRAFICOS WEY</h1>
-    <p>Tu mejor opción a la hora de personalización</p>
+    <!-- Ícono de menú -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <!-- Menú desplegable -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="combos.html">Combos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
+    </div>
   </header>
 
   <!-- Sección de productos -->
@@ -141,7 +179,7 @@
       <img src="img/t-shirt.jpg" alt="T-SHIRTS PERSONALIZADOS">
       <h3>T-SHIRTS PERSONALIZADOS</h3>
       <p>Taza de cerámica con diseño a tu gusto.</p>
-      <a href="https://wa.me/18493904282?text=Hola,%20estoy%20interesado%20en%20comprar%20T-SHIRTS%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20T-SHIRTS%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
       <p class="precio">$10.00</p>
     </div>
 
@@ -150,7 +188,7 @@
       <img src="img/hoodies.jpg" alt="HOODIES PERSONALIZADOS">
       <h3>HOODIES PERSONALIZADOS</h3>
       <p>Vaso de acrílico con tu logo o diseño.</p>
-      <a href="https://wa.me/18493904282?text=Hola,%20estoy%20interesado%20en%20comprar%20HOODIES%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20HOODIES%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
       <p class="precio">$8.00</p>
     </div>
 
@@ -159,7 +197,7 @@
       <img src="img/vaso.jpg" alt="VASOS PERSONALIZADAS">
       <h3>VASOS PERSONALIZADAS</h3>
       <p>Tarjetas de presentación con diseño único.</p>
-      <a href="https://wa.me/18493904282?text=Hola,%20estoy%20interesado%20en%20comprar%20VASOS%20PERSONALIZADAS" class="comprar-btn">COMPRAR</a>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20VASOS%20PERSONALIZADAS" class="comprar-btn">COMPRAR</a>
       <p class="precio">$15.00</p>
     </div>
 
@@ -168,7 +206,7 @@
       <img src="img/taza.jpg" alt="TAZAS PERSONALIZADAS">
       <h3>TAZAS PERSONALIZADAS</h3>
       <p>Creación de logos profesionales para tu negocio.</p>
-      <a href="https://wa.me/18493904282?text=Hola,%20estoy%20interesado%20en%20comprar%20TAZAS%20PERSONALIZADAS" class="comprar-btn">COMPRAR</a>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20TAZAS%20PERSONALIZADAS" class="comprar-btn">COMPRAR</a>
       <p class="precio">$50.00</p>
     </div>
 
@@ -182,7 +220,7 @@
       </div>
       <h3>Diseño de Logos</h3>
       <p>Creación de logos profesionales para tu negocio.</p>
-      <a href="https://wa.me/18493904282?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
       <p class="precio">$50.00</p>
     </div>
   </div>
@@ -206,6 +244,26 @@
 
     // Cambia de imagen cada 3 segundos
     setInterval(showNextSlide, 3000);
+
+    // JavaScript para el menú desplegable
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    }
+
+    // Cerrar el menú si se hace clic fuera de él
+    window.onclick = function (event) {
+      if (!event.target.matches('.menu-icon')) {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (dropdownMenu.style.display === 'block') {
+          dropdownMenu.style.display = 'none';
+        }
+      }
+    };
   </script>
 </body>
 </html>
