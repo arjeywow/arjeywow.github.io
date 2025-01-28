@@ -22,23 +22,23 @@
     }
 
     header a {
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            align-items: center;
-        }
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
 
-        header img {
-            width: 140px;
-            height: 85px;
-            margin-right: 10px;
-            border-radius: 0%/* Opcional, redondea el logo */
-        }
+    header img {
+      width: 140px;
+      height: 85px;
+      margin-right: 10px;
+      border-radius: 0%; /* Opcional, redondea el logo */
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
 
     .productos {
       display: flex;
@@ -47,19 +47,39 @@
       padding: 20px;
     }
     .producto {
-      background-color: #2a2d34;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 300px;
+      background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 10px;
-      padding: 15px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .producto img {
       max-width: 100%;
+      border-radius: 20px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
       border-radius: 8px;
     }
+
+    .slideshow-container img {
+      width: 100%;
+      display: none;
+    }
+
+    .slideshow-container img.active {
+      display: block;
+    }
+
     .producto h3 {
       font-size: 18px;
       color: #d71f16;
@@ -67,7 +87,7 @@
     }
     .producto p {
       font-size: 14px;
-      color: #ffffff;
+      color: #2a2d34;
     }
     .producto .precio {
       font-size: 16px;
@@ -90,7 +110,7 @@
     <a href="index.html">
       <img src="img/logo.png" alt="Logo de la Página">
       <h1></h1>
-  </a>
+    </a>
     <h1>CATALOGO GRAFICOS WEY</h1>
     <p>Tu mejor opción a la hora de personalización</p>
   </header>
@@ -99,7 +119,7 @@
   <div class="productos">
     <!-- Producto 1 -->
     <div class="producto">
-      <img src="taza.jpg" alt="T-SHIRTS PERSONALIZADOS">
+      <img src="img/t-shirt.jpg" alt="T-SHIRTS PERSONALIZADOS">
       <h3>T-SHIRTS PERSONALIZADOS</h3>
       <p>Taza de cerámica con diseño a tu gusto.</p>
       <p class="precio">$10.00</p>
@@ -107,7 +127,7 @@
 
     <!-- Producto 2 -->
     <div class="producto">
-      <img src="vaso.jpg" alt="HOODIES PERSONALIZADOS">
+      <img src="img/hoodies.jpg" alt="HOODIES PERSONALIZADOS">
       <h3>HOODIES PERSONALIZADOS</h3>
       <p>Vaso de acrílico con tu logo o diseño.</p>
       <p class="precio">$8.00</p>
@@ -130,8 +150,13 @@
     </div>
 
     <!-- Producto 5 -->
-    <div class="producto"> 
-      <img src="logo.jpg" alt="Diseño de logos">
+    <div class="producto">
+      <div class="slideshow-container">
+        <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
+        <img src="img/logo_2.jpg" alt="Diseño de logos">
+        <img src="img/logo_3.jpg" alt="Diseño de logos">
+        <img src="img/logo_4.jpg" alt="Diseño de logos">
+      </div>
       <h3>Diseño de Logos</h3>
       <p>Creación de logos profesionales para tu negocio.</p>
       <p class="precio">$50.00</p>
@@ -144,5 +169,19 @@
     <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    // JavaScript para controlar el slideshow
+    const slides = document.querySelectorAll('.slideshow-container img');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    // Cambia de imagen cada 3 segundos
+    setInterval(showNextSlide, 3000);
+  </script>
 </body>
 </html>
