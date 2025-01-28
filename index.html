@@ -9,139 +9,24 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #2a2d34;
-      color: #ffffff;
-      display: flex;
-      transition: margin-left 0.3s;
+      background-color: #f9f9f9;
+      color: #333;
     }
-    /* Barra lateral */
-    .sidebar {
-      width: 250px;
-      background-color: #2a2d34;
+    header {
+      background-color: #4CAF50;
+      color: white;
       padding: 20px;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      transition: width 0.3s;
-    }
-    .sidebar.collapsed {
-      width: 60px;
-    }
-    .sidebar .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .sidebar .logo img {
-      max-width: 100%;
-      border-radius: 50%;
-    }
-    .sidebar h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #00ffcc;
-      white-space: nowrap;
       text-align: center;
     }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sidebar ul li {
-      margin: 15px 0;
-    }
-    .sidebar ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-      white-space: nowrap;
-    }
-    .sidebar ul li a:hover {
-      color: #00ffcc;
-    }
-    /* Botón para contraer/expandir */
-    .toggle-btn {
-      background-color: #00ffcc;
-      border: none;
-      color: #1e1e2f;
-      padding: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      position: fixed;
-      top: 20px;
-      left: 210px;
-      z-index: 1000;
-      border-radius: 50%;
-      transition: left 0.3s;
-    }
-    .toggle-btn.collapsed {
-      left: 20px;
-    }
-    /* Contenido principal */
-    .main-content {
-      flex: 1;
-      padding: 20px;
-      transition: margin-left 0.3s;
-    }
-    .main-content.collapsed {
-      margin-left: 60px;
-    }
-    /* Barra de búsqueda y redes sociales */
-    .top-bar {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      left: 270px; /* Ajuste para la barra lateral */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: left 0.3s;
-    }
-    .top-bar.collapsed {
-      left: 80px; /* Ajuste cuando la barra está contraída */
-    }
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-    .social-icons a {
-      color: #00ffcc; /* Color de los íconos */
-      font-size: 20px;
-      text-decoration: none;
-    }
-    .social-icons a:hover {
-      color: #ffffff; /* Color al pasar el mouse */
-    }
-    .search-bar {
-      display: flex;
-      align-items: center;
-    }
-    .search-bar input {
-      padding: 10px;
-      border: none;
-      border-radius: 20px;
-      background-color: #2a2a3f;
-      color: #ffffff;
-      outline: none;
-    }
-    .search-bar button {
-      background-color: #00ffcc;
-      border: none;
-      padding: 10px;
-      border-radius: 50%;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    .search-bar button i {
-      color: #1e1e2f;
-    }
-    /* Productos */
     .productos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      margin-top: 60px; /* Espacio para la barra superior */
     }
     .producto {
-      background-color: #2a2a3f;
+      background-color: white;
+      border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px;
       padding: 15px;
@@ -156,20 +41,18 @@
     .producto h3 {
       font-size: 18px;
       margin: 10px 0;
-      color: #00ffcc;
     }
     .producto p {
       font-size: 14px;
-      color: #cccccc;
+      color: #777;
     }
     .producto .precio {
       font-size: 16px;
-      color: #00ffcc;
+      color: #4CAF50;
       font-weight: bold;
     }
-    /* Pie de página */
     footer {
-      background-color: #2a2a3f;
+      background-color: #333;
       color: white;
       text-align: center;
       padding: 10px;
@@ -179,96 +62,52 @@
 </head>
 <body>
 
-  <!-- Barra lateral -->
-  <div class="sidebar" id="sidebar">
-    <div class="logo">
-      <img src="logo.jpg" alt="Logo de la empresa">
+  <!-- Encabezado -->
+  <header>
+    <h1>Artículos Personalizados</h1>
+    <p>Tu mejor opción en tazas, vasos, tarjetas y más</p>
+  </header>
+
+  <!-- Sección de productos -->
+  <div class="productos">
+    <!-- Producto 1 -->
+    <div class="producto">
+      <img src="taza.jpg" alt="Taza personalizada">
+      <h3>Taza Personalizada</h3>
+      <p>Taza de cerámica con diseño a tu gusto.</p>
+      <p class="precio">$10.00</p>
     </div>
-    <h2>Artículos Personalizados</h2>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Sobre Nosotros</a></li>
-    </ul>
+
+    <!-- Producto 2 -->
+    <div class="producto">
+      <img src="vaso.jpg" alt="Vaso personalizado">
+      <h3>Vaso Personalizado</h3>
+      <p>Vaso de acrílico con tu logo o diseño.</p>
+      <p class="precio">$8.00</p>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="producto">
+      <img src="tarjeta.jpg" alt="Tarjetas personalizadas">
+      <h3>Tarjetas Personalizadas</h3>
+      <p>Tarjetas de presentación con diseño único.</p>
+      <p class="precio">$15.00</p>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="producto">
+      <img src="logo.jpg" alt="Diseño de logos">
+      <h3>Diseño de Logos</h3>
+      <p>Creación de logos profesionales para tu negocio.</p>
+      <p class="precio">$50.00</p>
+    </div>
   </div>
 
-  <!-- Botón para contraer/expandir -->
-  <button class="toggle-btn" id="toggle-btn">☰</button>
-
-  <!-- Contenido principal -->
-  <div class="main-content" id="main-content">
-    <!-- Barra superior con redes sociales y búsqueda -->
-    <div class="top-bar" id="top-bar">
-      <!-- Redes sociales -->
-      <div class="social-icons">
-        <a href="#" title="Instagram">📸</a>
-        <a href="#" title="WhatsApp">📱</a>
-        <a href="#" title="Facebook">📘</a>
-      </div>
-      <!-- Barra de búsqueda -->
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar...">
-        <button><i>🔍</i></button>
-      </div>
-    </div>
-
-    <!-- Sección de productos -->
-    <div class="productos">
-      <!-- Producto 1 -->
-      <div class="producto">
-        <img src="img/taza.jpg" alt="Taza personalizada">
-        <h3>Taza Personalizada</h3>
-        <p>Taza de cerámica con diseño a tu gusto.</p>
-        <p class="precio">$10.00</p>
-      </div>
-
-      <!-- Producto 2 -->
-      <div class="producto">
-        <img src="img/vaso.jpg" alt="Vaso personalizado">
-        <h3>Vaso Personalizado</h3>
-        <p>Vaso de acrílico con tu logo o diseño.</p>
-        <p class="precio">$8.00</p>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="producto">
-        <img src="tarjeta.jpg" alt="Tarjetas personalizadas">
-        <h3>Tarjetas Personalizadas</h3>
-        <p>Tarjetas de presentación con diseño único.</p>
-        <p class="precio">$15.00</p>
-      </div>
-
-      <!-- Producto 4 -->
-      <div class="producto">
-        <img src="logo.jpg" alt="Diseño de logos">
-        <h3>Diseño de Logos</h3>
-        <p>Creación de logos profesionales para tu negocio.</p>
-        <p class="precio">$50.00</p>
-      </div>
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-      <p>Contacto: info@tuejemplo.com | Tel: 123-456-7890</p>
-      <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
-    </footer>
-  </div>
-
-  <!-- JavaScript para contraer/expandir la barra lateral -->
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggle-btn');
-    const mainContent = document.getElementById('main-content');
-    const topBar = document.getElementById('top-bar');
-
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-      toggleBtn.classList.toggle('collapsed');
-      mainContent.classList.toggle('collapsed');
-      topBar.classList.toggle('collapsed');
-    });
-  </script>
+  <!-- Pie de página -->
+  <footer>
+    <p>Contacto: info@tuejemplo.com | Tel: 123-456-7890</p>
+    <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>
