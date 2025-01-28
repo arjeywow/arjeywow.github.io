@@ -13,11 +13,33 @@
       color: #333;
     }
     header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      background-color: #2a2d34;
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      text-align: left;
     }
+
+    header a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 140px;
+            height: 85px;
+            margin-right: 10px;
+            border-radius: 0%/* Opcional, redondea el logo */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -25,7 +47,7 @@
       padding: 20px;
     }
     .producto {
-      background-color: white;
+      background-color: #2a2d34;
       border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px;
@@ -40,19 +62,20 @@
     }
     .producto h3 {
       font-size: 18px;
+      color: #d71f16;
       margin: 10px 0;
     }
     .producto p {
       font-size: 14px;
-      color: #777;
+      color: #ffffff;
     }
     .producto .precio {
       font-size: 16px;
-      color: #4CAF50;
+      color: #d71f16;
       font-weight: bold;
     }
     footer {
-      background-color: #333;
+      background-color: #2a2d34;
       color: white;
       text-align: center;
       padding: 10px;
@@ -64,37 +87,49 @@
 
   <!-- Encabezado -->
   <header>
-    <h1>Artículos Personalizados</h1>
-    <p>Tu mejor opción en tazas, vasos, tarjetas y más</p>
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo de la Página">
+      <h1></h1>
+  </a>
+    <h1>CATALOGO GRAFICOS WEY</h1>
+    <p>Tu mejor opción a la hora de personalización</p>
   </header>
 
   <!-- Sección de productos -->
   <div class="productos">
     <!-- Producto 1 -->
     <div class="producto">
-      <img src="taza.jpg" alt="Taza personalizada">
-      <h3>Taza Personalizada</h3>
+      <img src="taza.jpg" alt="T-SHIRTS PERSONALIZADOS">
+      <h3>T-SHIRTS PERSONALIZADOS</h3>
       <p>Taza de cerámica con diseño a tu gusto.</p>
       <p class="precio">$10.00</p>
     </div>
 
     <!-- Producto 2 -->
     <div class="producto">
-      <img src="vaso.jpg" alt="Vaso personalizado">
-      <h3>Vaso Personalizado</h3>
+      <img src="vaso.jpg" alt="HOODIES PERSONALIZADOS">
+      <h3>HOODIES PERSONALIZADOS</h3>
       <p>Vaso de acrílico con tu logo o diseño.</p>
       <p class="precio">$8.00</p>
     </div>
 
     <!-- Producto 3 -->
     <div class="producto">
-      <img src="tarjeta.jpg" alt="Tarjetas personalizadas">
-      <h3>Tarjetas Personalizadas</h3>
+      <img src="tarjeta.jpg" alt="VASOS PERSONALIZADAS">
+      <h3>VASOS PERSONALIZADAS</h3>
       <p>Tarjetas de presentación con diseño único.</p>
       <p class="precio">$15.00</p>
     </div>
 
     <!-- Producto 4 -->
+    <div class="producto">
+      <img src="logo.jpg" alt="TAZAS PERSONALIZADAS">
+      <h3>TAZAS PERSONALIZADAS</h3>
+      <p>Creación de logos profesionales para tu negocio.</p>
+      <p class="precio">$50.00</p>
+    </div>
+
+    <!-- Producto 5 -->
     <div class="producto">
       <img src="logo.jpg" alt="Diseño de logos">
       <h3>Diseño de Logos</h3>
@@ -105,7 +140,7 @@
 
   <!-- Pie de página -->
   <footer>
-    <p>Contacto: info@tuejemplo.com | Tel: 123-456-7890</p>
+    <p>Contacto: graficoswey@gmail.com | Tel: 123-456-7890</p>
     <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
   </footer>
 
