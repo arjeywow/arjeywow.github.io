@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combos - Catálogo de Artículos Personalizados</title>
+  <style>
+    body {
+      font-family: 'Helvetica', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #2a2d34;
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      text-align: left;
+      position: relative;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      width: 140px;
+      height: 85px;
+      margin-right: 10px;
+      border-radius: 0%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Estilos para el menú desplegable */
+    .menu-icon {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: auto;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #2a2d34;
+      border: 1px solid #444;
+      border-radius: 5px;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #444;
+    }
+
+    .combos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .combo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 300px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+    }
+    .combo img {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+
+    .combo h3 {
+      font-size: 18px;
+      color: #d71f16;
+      margin: 10px 0;
+    }
+    .combo p {
+      font-size: 14px;
+      color: #2a2d34;
+    }
+    .combo .precio {
+      font-size: 16px;
+      color: #d71f16;
+      font-weight: bold;
+    }
+
+    .combo .comprar-btn {
+      background-color: #d71f16;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .combo .comprar-btn:hover {
+      background-color: #b31810;
+    }
+
+    footer {
+      background-color: #2a2d34;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo de la Página">
+      <h1></h1>
+    </a>
+    <h1>COMBOS - GRAFICOS WEY</h1>
+    <!-- Ícono de menú -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <!-- Menú desplegable -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="index.html">Inicio</a>
+      <a href="combos.html">Combos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
+    </div>
+  </header>
+
+  <!-- Sección de combos -->
+  <div class="combos">
+    <!-- Combo 1 -->
+    <div class="combo">
+      <img src="img/combo1.jpg" alt="Combo 1">
+      <h3>Combo Básico</h3>
+      <p>Incluye 2 tazas personalizadas y 1 camiseta.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20Combo%20Básico" class="comprar-btn">COMPRAR</a>
+      <p class="precio">$25.00</p>
+    </div>
+
+    <!-- Combo 2 -->
+    <div class="combo">
+      <img src="img/combo2.jpg" alt="Combo 2">
+      <h3>Combo Familiar</h3>
+      <p>Incluye 4 tazas personalizadas, 2 camisetas y 1 hoodie.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20Combo%20Familiar" class="comprar-btn">COMPRAR</a>
+      <p class="precio">$50.00</p>
+    </div>
+
+    <!-- Combo 3 -->
+    <div class="combo">
+      <img src="img/combo3.jpg" alt="Combo 3">
+      <h3>Combo Empresarial</h3>
+      <p>Incluye 10 tazas personalizadas, 5 camisetas y 5 vasos.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20Combo%20Empresarial" class="comprar-btn">COMPRAR</a>
+      <p class="precio">$120.00</p>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Contacto: graficoswey@gmail.com | Tel: 123-456-7890</p>
+    <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // JavaScript para el menú desplegable
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    }
+
+    // Cerrar el menú si se hace clic fuera de él
+    window.onclick = function (event) {
+      if (!event.target.matches('.menu-icon')) {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (dropdownMenu.style.display === 'block') {
+          dropdownMenu.style.display = 'none';
+        }
+      }
+    };
+  </script>
+</body>
+</html>
