@@ -67,7 +67,6 @@
       cursor: pointer;
       font-size: 24px;
       margin-left: auto;
-      color: white;
     }
 
     .dropdown-menu {
@@ -79,7 +78,7 @@
       border: 1px solid #444;
       border-radius: 5px;
       padding: 10px;
-      z-index: 1000;
+      z-index: 1001; /* Asegura que esté por encima del header */
     }
 
     .dropdown-menu a {
@@ -181,7 +180,7 @@
   <header id="mainHeader">
     <a href="index.html">
       <img src="img/logo.png" alt="Logo de la Página">
-      <h1>CATALOGO</h1>
+      <h1>CATALOGO GRAFICOS WEY</h1>
     </a>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="dropdown-menu" id="dropdownMenu">
