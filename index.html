@@ -33,7 +33,6 @@
       width: 140px;
       height: 85px;
       margin-right: 10px;
-      border-radius: 0%;
     }
 
     header h1 {
@@ -75,6 +74,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
       padding: 20px;
     }
     .producto {
@@ -82,35 +82,38 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 300px;
+      width: 18%;
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px;
     }
     .producto img {
       max-width: 100%;
       border-radius: 20px;
     }
-
+    .comprar-btn {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
     .slideshow-container {
       position: relative;
       width: 100%;
       overflow: hidden;
       border-radius: 8px;
     }
-
     .slideshow-container img {
       width: 100%;
       display: none;
     }
-
     .slideshow-container img.active {
       display: block;
     }
-
     footer {
       background-color: #2a2d34;
       color: white;
@@ -134,17 +137,19 @@
     </div>
   </header>
 
-  <div class="producto">
-    <div class="slideshow-container" id="slideshow1">
-      <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
-      <img src="img/logo_2.jpg" alt="Diseño de logos">
-      <img src="img/logo_3.jpg" alt="Diseño de logos">
-      <img src="img/logo_4.jpg" alt="Diseño de logos">
+  <div class="productos">
+    <div class="producto">
+      <div class="slideshow-container" id="slideshow1">
+        <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
+        <img src="img/logo_2.jpg" alt="Diseño de logos">
+        <img src="img/logo_3.jpg" alt="Diseño de logos">
+        <img src="img/logo_4.jpg" alt="Diseño de logos">
+      </div>
+      <h3>Diseño de Logos</h3>
+      <p>Creación de logos profesionales para tu negocio.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
+      <p class="precio">$50.00</p>
     </div>
-    <h3>Diseño de Logos</h3>
-    <p>Creación de logos profesionales para tu negocio.</p>
-    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
-    <p class="precio">$50.00</p>
   </div>
 
   <footer>
