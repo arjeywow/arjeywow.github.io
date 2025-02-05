@@ -16,42 +16,30 @@
       display: flex;
       align-items: center;
       background-color: #2a2d34;
-      color: rgb(255, 255, 255);
+      color: white;
       padding: 10px 20px;
-      text-align: center;
-      position: relative; /* Para posicionar el menú desplegable */
+      position: relative;
     }
-
     header a {
       text-decoration: none;
       color: #fff;
       display: flex;
       align-items: center;
     }
-
     header img {
       width: 140px;
       height: 85px;
       margin-right: 10px;
-      border-radius: 0%;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    /* Estilos para el menú desplegable */
     .menu-icon {
       cursor: pointer;
       font-size: 24px;
-      margin-left: auto; /* Mueve el ícono a la derecha */
+      margin-left: auto;
     }
-
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 100%; /* Posiciona el menú debajo del header */
+      top: 100%;
       right: 0;
       background-color: #2a2d34;
       border: 1px solid #444;
@@ -59,7 +47,6 @@
       padding: 10px;
       z-index: 1000;
     }
-
     .dropdown-menu a {
       display: block;
       color: white;
@@ -67,11 +54,9 @@
       text-decoration: none;
       text-align: right;
     }
-
     .dropdown-menu a:hover {
       background-color: #444;
     }
-
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -95,23 +80,13 @@
       max-width: 100%;
       border-radius: 20px;
     }
-
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
     .slideshow-container img {
       width: 100%;
       display: none;
     }
-
     .slideshow-container img.active {
       display: block;
     }
-
     .producto h3 {
       font-size: 18px;
       color: #d71f16;
@@ -126,7 +101,6 @@
       color: #d71f16;
       font-weight: bold;
     }
-
     .producto .comprar-btn {
       background-color: #d71f16;
       color: white;
@@ -137,13 +111,10 @@
       cursor: pointer;
       margin-top: 10px;
       text-decoration: none;
-      display: inline-block;
     }
-
     .producto .comprar-btn:hover {
       background-color: #b31810;
     }
-
     footer {
       background-color: #2a2d34;
       color: white;
@@ -154,130 +125,51 @@
   </style>
 </head>
 <body>
-
-  <!-- Encabezado -->
   <header>
     <a href="index.html">
       <img src="img/logo.png" alt="Logo de la Página">
-      <h1></h1>
     </a>
-    <h1>CATALOGO</h1>
-    <!-- Ícono de menú -->
+    <h1>CATÁLOGO</h1>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <!-- Menú desplegable -->
     <div class="dropdown-menu" id="dropdownMenu">
       <a href="combos.html">Combos</a>
       <a href="contacto.html">Contacto</a>
       <a href="quienes-somos.html">Quiénes Somos</a>
     </div>
   </header>
-
-  <!-- Sección de productos -->
   <div class="productos">
-    <!-- Producto 1 -->
     <div class="producto">
       <img src="img/t-shirt.jpg" alt="T-SHIRTS PERSONALIZADOS">
       <h3>T-SHIRTS PERSONALIZADOS</h3>
-      <p>Taza de cerámica con diseño a tu gusto.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20T-SHIRTS%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
+      <p>Camisetas con diseños únicos y personalizables.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20T-SHIRTS" class="comprar-btn">COMPRAR</a>
       <p class="precio">$10.00</p>
     </div>
-
-    <!-- Producto 2 -->
-    <div class="producto">
-      <img src="img/hoodies.jpg" alt="HOODIES PERSONALIZADOS">
-      <h3>HOODIES PERSONALIZADOS</h3>
-      <p>Vaso de acrílico con tu logo o diseño.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20HOODIES%20PERSONALIZADOS" class="comprar-btn">COMPRAR</a>
-      <p class="precio">$8.00</p>
-    </div>
-
-    <!-- Producto 3 -->
-    <div class="producto">
-      <img src="img/vaso.jpg" alt="VASOS PERSONALIZADAS">
-      <h3>VASOS PERSONALIZADAS</h3>
-      <p>Tarjetas de presentación con diseño único.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20VASOS%20PERSONALIZADAS" class="comprar-btn">COMPRAR</a>
-      <p class="precio">$15.00</p>
-    </div>
-
-    <!-- Producto 4 -->
-    <div class="producto">
- <div class="slideshow-container-2">
-        <img src="img/1080 DOBLE.jpg" alt="Diseño de logos" class="active">
-        <img src="img/love 1.jpg" alt="Diseño de logos">
-        <img src="img/love 2.jpg" alt="Diseño de logos">
-      </div>
-      <h3>Tazas Personalizadas</h3>
-      <p>Diseñamos y creamos ese regalo tan personal como tu.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
-      <p class="precio">$25.00</p>
-    </div>
-
-    <!-- Producto 5 -->
     <div class="producto">
       <div class="slideshow-container">
         <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
         <img src="img/logo_2.jpg" alt="Diseño de logos">
-        <img src="img/logo_3.jpg" alt="Diseño de logos">
-        <img src="img/logo_4.jpg" alt="Diseño de logos">
       </div>
       <h3>Diseño de Logos</h3>
-      <p>Creación de logos profesionales para tu negocio.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
+      <p>Creación de logotipos profesionales.</p>
+      <a href="https://wa.me/1234567890?text=Hola,%20quiero%20un%20logotipo" class="comprar-btn">COMPRAR</a>
       <p class="precio">$50.00</p>
     </div>
   </div>
-
-  <!-- Pie de página -->
   <footer>
     <p>Contacto: graficoswey@gmail.com | Tel: 123-456-7890</p>
     <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
   </footer>
-
   <script>
-    // JavaScript para controlar el slideshow
-    const slides = document.querySelectorAll('.slideshow-container img');
-    let currentSlide = 0;
-
-    function showNextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-
-    // Cambia de imagen cada 3 segundos
-    setInterval(showNextSlide, 3000);
-
-        // JavaScript para controlar el slideshow
-    const slides = document.querySelectorAll('.slideshow-container-2 img');
-    let currentSlide = 0;
-
-    function showNextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-
-    // Cambia de imagen cada 3 segundos
-    setInterval(showNextSlide, 3000);
-
-    // JavaScript para el menú desplegable
     function toggleMenu() {
-      const dropdownMenu = document.getElementById('dropdownMenu');
-      if (dropdownMenu.style.display === 'block') {
-        dropdownMenu.style.display = 'none';
-      } else {
-        dropdownMenu.style.display = 'block';
-      }
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
-
-    // Cerrar el menú si se hace clic fuera de él
     window.onclick = function (event) {
       if (!event.target.matches('.menu-icon')) {
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        if (dropdownMenu.style.display === 'block') {
-          dropdownMenu.style.display = 'none';
+        const menu = document.getElementById('dropdownMenu');
+        if (menu.style.display === 'block') {
+          menu.style.display = 'none';
         }
       }
     };
