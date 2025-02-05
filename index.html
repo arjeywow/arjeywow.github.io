@@ -203,7 +203,7 @@
 
     <!-- Producto 4 -->
     <div class="producto">
- <div class="slideshow-container">
+ <div class="slideshow-container-2">
         <img src="img/1080 DOBLE.jpg" alt="Diseño de logos" class="active">
         <img src="img/love 1.jpg" alt="Diseño de logos">
         <img src="img/love 2.jpg" alt="Diseño de logos">
@@ -238,6 +238,19 @@
   <script>
     // JavaScript para controlar el slideshow
     const slides = document.querySelectorAll('.slideshow-container img');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    // Cambia de imagen cada 3 segundos
+    setInterval(showNextSlide, 3000);
+
+        // JavaScript para controlar el slideshow
+    const slides = document.querySelectorAll('.slideshow-container-2 img');
     let currentSlide = 0;
 
     function showNextSlide() {
