@@ -18,24 +18,35 @@
       background-color: #2a2d34;
       color: white;
       padding: 10px 20px;
+      text-align: center;
       position: relative;
     }
+
     header a {
       text-decoration: none;
       color: #fff;
       display: flex;
       align-items: center;
     }
+
     header img {
       width: 140px;
       height: 85px;
       margin-right: 10px;
+      border-radius: 0%;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
     .menu-icon {
       cursor: pointer;
       font-size: 24px;
       margin-left: auto;
     }
+
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -47,6 +58,7 @@
       padding: 10px;
       z-index: 1000;
     }
+
     .dropdown-menu a {
       display: block;
       color: white;
@@ -54,9 +66,11 @@
       text-decoration: none;
       text-align: right;
     }
+
     .dropdown-menu a:hover {
       background-color: #444;
     }
+
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -80,41 +94,23 @@
       max-width: 100%;
       border-radius: 20px;
     }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
     .slideshow-container img {
       width: 100%;
       display: none;
     }
+
     .slideshow-container img.active {
       display: block;
     }
-    .producto h3 {
-      font-size: 18px;
-      color: #d71f16;
-      margin: 10px 0;
-    }
-    .producto p {
-      font-size: 14px;
-      color: #2a2d34;
-    }
-    .producto .precio {
-      font-size: 16px;
-      color: #d71f16;
-      font-weight: bold;
-    }
-    .producto .comprar-btn {
-      background-color: #d71f16;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-      text-decoration: none;
-    }
-    .producto .comprar-btn:hover {
-      background-color: #b31810;
-    }
+
     footer {
       background-color: #2a2d34;
       color: white;
@@ -128,8 +124,8 @@
   <header>
     <a href="index.html">
       <img src="img/logo.png" alt="Logo de la Página">
+      <h1>CATÁLOGO</h1>
     </a>
-    <h1>CATÁLOGO</h1>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="dropdown-menu" id="dropdownMenu">
       <a href="combos.html">Combos</a>
@@ -137,41 +133,54 @@
       <a href="quienes-somos.html">Quiénes Somos</a>
     </div>
   </header>
-  <div class="productos">
-    <div class="producto">
-      <img src="img/t-shirt.jpg" alt="T-SHIRTS PERSONALIZADOS">
-      <h3>T-SHIRTS PERSONALIZADOS</h3>
-      <p>Camisetas con diseños únicos y personalizables.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20T-SHIRTS" class="comprar-btn">COMPRAR</a>
-      <p class="precio">$10.00</p>
+
+  <div class="producto">
+    <div class="slideshow-container" id="slideshow1">
+      <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
+      <img src="img/logo_2.jpg" alt="Diseño de logos">
+      <img src="img/logo_3.jpg" alt="Diseño de logos">
+      <img src="img/logo_4.jpg" alt="Diseño de logos">
     </div>
-    <div class="producto">
-      <div class="slideshow-container">
-        <img src="img/logo_1.jpg" alt="Diseño de logos" class="active">
-        <img src="img/logo_2.jpg" alt="Diseño de logos">
-      </div>
-      <h3>Diseño de Logos</h3>
-      <p>Creación de logotipos profesionales.</p>
-      <a href="https://wa.me/1234567890?text=Hola,%20quiero%20un%20logotipo" class="comprar-btn">COMPRAR</a>
-      <p class="precio">$50.00</p>
-    </div>
+    <h3>Diseño de Logos</h3>
+    <p>Creación de logos profesionales para tu negocio.</p>
+    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20Diseño%20de%20Logos" class="comprar-btn">COMPRAR</a>
+    <p class="precio">$50.00</p>
   </div>
+
   <footer>
     <p>Contacto: graficoswey@gmail.com | Tel: 123-456-7890</p>
     <p>© 2023 Artículos Personalizados. Todos los derechos reservados.</p>
   </footer>
+
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     }
-    window.onclick = function (event) {
-      if (!event.target.matches('.menu-icon')) {
-        const menu = document.getElementById('dropdownMenu');
-        if (menu.style.display === 'block') {
-          menu.style.display = 'none';
+
+    function startSlideshow(containerId) {
+      const container = document.getElementById(containerId);
+      const slides = container.getElementsByTagName('img');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
         }
+        slides[index].style.display = 'block';
       }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      showSlide(currentIndex);
+      setInterval(nextSlide, 3000);
+    }
+
+    window.onload = function() {
+      startSlideshow('slideshow1');
     };
   </script>
 </body>
